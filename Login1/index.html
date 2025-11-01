@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Stylish Portal</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+        body {
+            background: #000;
+        }
+
+        h2 {
+            color: #ff4c4c;
+            text-align: center;
+            margin-bottom: 10px;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(255, 76, 76, 0.5);
+            font-size: 28px;
+        }
+
+        p {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .input-field, .glow-line, .input-group label {
+            color: #ffffff;
+        }
+
+        .login-btn {
+            border: 1px solid #ff4c4c;
+            color: #ff4c4c;
+        }
+
+        .login-btn:hover {
+            background: rgba(255, 76, 76, 0.1);
+            box-shadow: 0 0 20px rgba(255, 76, 76, 0.5),
+                        inset 0 0 10px rgba(255, 76, 76, 0.3);
+        }
+
+        .signup-link {
+            color: #fff;
+        }
+
+        .signup-link a {
+            color: #ff4c4c;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        #particles-js {
+            background-color: #000;
+        }
+    </style>
+
+    <div id="particles-js"></div>
+
+    <div class="container">
+        <div class="form-box">
+            <h2>Create Your Account</h2>
+            <p>Join Care Pieces Today</p>
+
+            <form>
+                <div class="input-group">
+                    <input type="email" id="email" required class="input-field">
+                    <label for="email">Email</label>
+                    <div class="glow-line"></div>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" required class="input-field">
+                    <label for="password">Password</label>
+                    <div class="glow-line"></div>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    <span>SIGN IN</span>
+                    <div class="btn-glow"></div>
+                </button>
+
+                <div class="signup-link">
+                    Already have an account? <a href="./Registre.html">INSCRIPTION</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": "#ff4c4c" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.8, "random": true },
+                    "size": { "value": 5, "random": true },
+                    "line_linked": { "enable": true, "distance": 150, "color": "#ff4c4c", "opacity": 0.6, "width": 1.5 },
+                    "move": { "enable": true, "speed": 2, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+                    "modes": { "repulse": { "distance": 100, "duration": 0.4 }, "push": { "particles_nb": 4 } }
+                },
+                "retina_detect": true
+            });
+        });
+    </script>
+</body>
+</html>

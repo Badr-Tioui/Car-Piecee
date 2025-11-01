@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Portal - Register</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./register.php">
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <div class="container">
+        <div class="form-box">
+            <h2 class="form-title">Register</h2>
+            <p class="form-subtitle">Create your account</p>
+            
+ <form action="register.php" method="POST">
+    <div class="input-group">
+        <input type="text" id="fullname" name="fullname" required class="input-field">                                      
+        <label for="fullname">Full Name</label>
+        <div class="glow-line"></div>
+    </div>
+
+    <div class="input-group">
+        <input type="text" id="username" name="username" required class="input-field">
+        <label for="username">Username</label>
+        <div class="glow-line"></div>
+    </div>
+
+    <div class="input-group">
+        <input type="email" id="email" name="email" required class="input-field">
+        <label for="email">Email</label>
+        <div class="glow-line"></div>
+    </div>
+
+    <div class="input-group">
+        <input type="password" id="password" name="password" required class="input-field">
+        <label for="password">Password</label>
+        <div class="glow-line"></div>
+    </div>
+
+    <div class="input-group">
+        <input type="password" id="confirm-password" name="confirm_password" required class="input-field">
+        <label for="confirm-password">Confirm Password</label>
+        <div class="glow-line"></div>
+    </div>
+
+    <button type="submit" class="login-btn" >SIGN UP</button>
+
+    <div class="signup-link">
+        <span style="color:white;">Already have an account? </span>
+        <a href="index.html" class="login-link">Login</a>
+    </div>
+</form>
+
+
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {"value":100,"density":{"enable":true,"value_area":800}},
+                    "color":{"value":"#ff4b4b"}, // particles rouges
+                    "shape":{"type":"circle","stroke":{"width":0,"color":"#000"},"polygon":{"nb_sides":5}},
+                    "opacity":{"value":0.8,"random":true,"anim":{"enable":true,"speed":1,"opacity_min":0.4,"sync":false}},
+                    "size":{"value":5,"random":true,"anim":{"enable":true,"speed":2,"size_min":1,"sync":false}},
+                    "line_linked":{"enable":true,"distance":150,"color":"#ff4b4b","opacity":0.6,"width":1.5},
+                    "move":{"enable":true,"speed":2,"direction":"none","random":true,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":true,"rotateX":600,"rotateY":1200}}
+                },
+                "interactivity":{
+                    "detect_on":"canvas",
+                    "events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},
+                    "modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":100,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}
+                },
+                "retina_detect": true
+            });
+        });
+    </script>
+
+  <style>
+    body {
+        background: #000; /* fond noir */
+    }
+
+    /* "Register" et "Create your account" en rouge */
+    .form-title,
+    .form-subtitle {
+        color: #ff4b4b !important;
+    }
+
+    /* Labels et texte des inputs en blanc pour lisibilité */
+    .input-group label {
+        color: #ffffff !important;
+    }
+
+    /* Glow rouge sous les inputs */
+    .input-field:focus ~ .glow-line {
+        width: 100%;
+        box-shadow: 0 0 10px #ff4b4b;
+        background: linear-gradient(90deg, transparent, #ff4b4b, #ff4b4b, #ff4b4b, transparent);
+    }
+
+    /* Bordure rouge des inputs et labels quand focus */
+    .input-field:focus {
+        border-bottom-color: #ff4b4b;
+    }
+
+    /* Bordure et glow des boutons */
+    .login-btn {
+        border: 1px solid #ff4b4b;
+        color: #ff4b4b;
+    }
+
+    .btn-glow {
+        background: linear-gradient(90deg, transparent, rgba(255,75,75,0.2), rgba(255,75,75,0.3), rgba(255,75,75,0.2), transparent);
+    }
+
+    /* Form box glow rouge */
+    .form-box {
+        border: 1px solid rgba(255,75,75,0.3);
+        box-shadow: 0 8px 24px rgba(255,75,75,0.4), inset 0 0 16px rgba(255,75,75,0.2);
+    }
+
+    /* Already have an account en blanc et Login en rouge plus grand */
+    .signup-link span {
+        color: #ffffff;
+    }
+
+    .signup-link .login-link {
+        color: #ff4b4b;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    /* Changer le glow des labels en rouge quand l'input est focus */
+    .input-field:focus ~ label,
+    .input-field:valid ~ label {
+        color: #ff4b4b !important;
+        text-shadow: 0 0 5px #ff4b4b;
+    }
+
+    /* Modifier les lignes par défaut sous les inputs */
+    .glow-line {
+        background: linear-gradient(90deg, transparent, #ff4b4b, #ff4b4b, #ff4b4b, transparent);
+    }
+</style>
+
+</body>
+</html>
