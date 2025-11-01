@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AutoService</title>
-  <link rel="stylesheet" href="./loay.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marques & Pièces Auto</title>
+    <!-- Google Fonts pour une typographie moderne -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap pour les modals et la grille de base -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/loay.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="chatbot.css">
 
 </head>
 <body>
-
+   
+    
   <!-- HEADER -->
   <header class="header">
     <div class="logo">
@@ -124,5 +131,347 @@
 </script>
 
 
+
+    <div class="container">
+       
+       <header>
+              <h1>Marques & Pièces Auto</h1>
+             <p>Découvrez nos sélections de marques et leurs pièces</p>
+         </header>
+         <!-- -->
+
+        <!-- Bouton bonus -->
+
+        <!-- Grille des marques -->
+        <div class="brands-grid" id="brandsGrid">
+            <!-- BMW -->
+            <div class="brand-card" data-name="BMW">
+                <img src="/imageses/alfa-romeo-logo-0-2048x2048-1.png" alt="BMW Logo" class="brand-logo">
+                <div class="brand-name">Alfa romeo</div>
+                <a class="btn btn-parts" href="/Pieces auto/alpha-romeo.html">Voir les pièces</a>
+
+            </div>
+            <!-- Mercedes -->
+            <div class="brand-card" data-name="mercedes">
+                <img src="/imageses/black-and-white-car-symbol-bmw-audi-removebg-preview.png" alt="Mercedes Logo" class="brand-logo">
+                <div class="brand-name">Audi</div>
+                <a class="btn btn-parts" href="/Pieces auto/audi-pieces.html">Voir les pièces</a>
+            </div>
+            <!-- Audi -->
+            <div class="brand-card" data-name="audi">
+                <img src="/imageses/bmw-brand-logo-0.png" alt="Audi Logo" class="brand-logo">
+                <div class="brand-name">BMW</div>
+               <a class="btn btn-parts" href="/Pieces auto/BMW-pieces.html">Voir les pièces</a>
+            </div>
+            <!-- Toyota -->
+            <div class="brand-card" data-name="toyota">
+                <img src="/imageses/citroen-logo-e1522874793839.webp" alt="Toyota Logo" class="brand-logo">
+                <div class="brand-name">Citroen</div>
+                <a class="btn btn-parts" href="/Pieces auto/Citroen-pieces.html">Voir les pièces</a>
+            </div>
+            <!-- Honda -->
+            <div class="brand-card" data-name="honda">
+                <img src="/imageses/Dacia-Logo-2003-711x400.png" alt="Honda Logo" class="brand-logo">
+                <div class="brand-name">Dacia</div>
+                <a class="btn btn-parts" href="/Pieces auto/Dacia-pieces.html">Voir les pièces</a>
+            </div>
+            <!-- Ford -->
+            <div class="brand-card" data-name="ford">
+                <img src="/imageses/Ferrari-Logo-PNG-Cutout.png" alt="Ford Logo" class="brand-logo">
+                <div class="brand-name">Ferrari</div>
+                <a class="btn btn-parts" href="/Pieces auto/Ferrari-pieces.html">Voir les pièces</a>
+            </div>
+            <!-- Volkswagen -->
+            <div class="brand-card" data-name="volkswagen">
+                <img src="/imageses/fiat-3-logo-png-transparent.png" alt="Volkswagen Logo" class="brand-logo">
+                <div class="brand-name">Fiat</div>
+                <a class="btn btn-parts" href="/Pieces auto/Fiat-pieces.html">Voir les pièces</a>
+            </div>
+            <!-- Renault -->
+            <div class="brand-card" data-name="renault">
+                <img src="/imageses/imgbin-honda-logo-car-tata-motors-honda-city-honda-7RvnfPDkF1yw7tyR6sNmz1s8X_t-removebg-preview.png" alt="Renault Logo" class="brand-logo">
+                <div class="brand-name">Hyundai</div>
+                <a class="btn btn-parts" href="/Pieces auto/Hyundai-pieces.html">Voir les pièces</a>
+            </div>
+            <!-- Peugeot -->
+            <div class="brand-card" data-name="peugeot">
+                <img src="/imageses/imgbin-nissan-juke-car-nissan-62EkzBWWjBmUFQxmj9T6Y7BHL_t-removebg-preview.png" alt="Peugeot Logo" class="brand-logo">
+                <div class="brand-name">Nissan</div>
+                <a class="btn btn-parts" href="/Pieces auto/Nissan-pieces.html">Voir les pièces</a>
+            </div>
+            <!-- Nissan -->
+            <div class="brand-card" data-name="nissan">
+                <img src="/imageses/logo-porsche-1536.png" alt="Nissan Logo" class="brand-logo">
+                <div class="brand-name">Porshe</div>
+                <a class="btn btn-parts" href="/Pieces auto/Porshe-pieces.html">Voir les pièces</a>
+            </div>
+            <!-- Kia -->
+            <div class="brand-card" data-name="kia">
+                <img src="/imageses/Maserati-Logo-PNG-Images-HD.png" alt="Kia Logo" class="brand-logo">
+                <div class="brand-name">Maserati</div>
+                <a class="btn btn-parts" href="/Pieces auto/Maserati-pieces.html">Voir les pièces</a>
+            </div>
+            <!-- Hyundai -->
+            <div class="brand-card" data-name="hyundai">
+                <img src="/imageses/OIP-removebg-preview.png" alt="Hyundai Logo" class="brand-logo">
+                <div class="brand-name">Peugot</div>
+                <a class="btn btn-parts" href="/Pieces auto/Peugot-pieces.html">Voir les pièces</a>
+            </div>
+            <!-- Chevrolet -->
+            <div class="brand-card" data-name="chevrolet">
+                <img src="/imageses/png-clipart-bugatti-veyron-car-bugatti-chiron-bugatti-vision-gran-turismo-bugatti-emblem-label-thumbnail-removebg-preview.png" alt="Chevrolet Logo" class="brand-logo">
+                <div class="brand-name">Bugatti</div>
+                <a class="btn btn-parts" href="/Pieces auto/Bugatti-pieces.html">Voir les pièces</a>
+            </div>
+            <!-- Citroën -->
+            <div class="brand-card" data-name="citroën">
+                <img src="/imageses/png-clipart-mitsubishi-motors-car-logo-mitsubishi-eclipse-cross-mitsubishi-angle-text-thumbnail-removebg-preview.png" alt="Citroën Logo" class="brand-logo">
+                <div class="brand-name">Mitsubishi</div>
+                <a class="btn btn-parts" href="/Pieces auto/Mitsubishi-pieces.html">Voir les pièces</a>
+            </div>
+            <!-- Fiat -->
+            <div class="brand-card" data-name="fiat">
+                <img src="/imageses/R-removebg-preview (1).png" alt="Fiat Logo" class="brand-logo">
+                <div class="brand-name">Dacia</div>
+                <a class="btn btn-parts" href="/Pieces auto/Dacia2-pieces.html">Voir les pièces</a>
+            </div>
+            <!-- Mazda -->
+            <div class="brand-card" data-name="mazda">
+                <img src="/imageses/R.png" alt="Mazda Logo" class="brand-logo">
+                <div class="brand-name">Jaguar</div>
+                <a class="btn btn-parts" href="/Pieces auto/Jaguar-pieces.html">Voir les pièces</a>
+            </div>
+            <!-- Subaru -->
+            <div class="brand-card" data-name="subaru">
+                <img src="/imageses/renault-logo-png_seeklogo-264207.png" alt="Subaru Logo" class="brand-logo">
+                <div class="brand-name">Renault</div>
+                <a class="btn btn-parts" href="/Pieces auto/Renault-pieces.html">Voir les pièces</a>
+            </div>
+            <!-- Jeep -->
+            <div class="brand-card" data-name="jeep">
+                <img src="/imageses/volkswagen-10-logo-png-transparent.png" alt="Jeep Logo" class="brand-logo">
+                <div class="brand-name">Golf</div>
+                <a class="btn btn-parts" href="/Pieces auto/Golf-pieces.html">Voir les pièces</a>
+            </div>
+
+              <div class="brand-card" data-name="jeep">
+                <img src="https://logos-world.net/wp-content/uploads/2021/04/Rolls-Royce-Motor-Cars-Logo-1911-2020.png" alt="Jeep Logo" class="brand-logo">
+                <div class="brand-name">rolls royce</div>
+                <a class="btn btn-parts" href="/Pieces auto/rolls royce-pieces.html">Voir les pièces</a>
+            </div>
+
+              <div class="brand-card" data-name="jeep">
+                <img src="https://purepng.com/public/uploads/large/purepng.com-chevrolet-logocarschevroletchevyautomobilelogo-1701527437813ghujm.png" alt="Jeep Logo" class="brand-logo">
+                <div class="brand-name">Chevrolet</div>
+                <a class="btn btn-parts" href="/Pieces auto/Chevrolet-pieces.html">Voir les pièces</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals pour chaque marque (exemple pour BMW, répéter pour les autres) -->
+    <div class="modal fade" id="modalBMW" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pièces pour BMW</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="parts-grid">
+                        <div class="part-item">
+                            <img src="https://via.placeholder.com/100?text=Moteur" alt="Moteur" class="part-image">
+                            <p>Moteur</p>
+                        </div>
+                        <div class="part-item">
+                            <img src="https://via.placeholder.com/100?text=Pneus" alt="Pneus" class="part-image">
+                            <p>Pneus</p>
+                        </div>
+                        <div class="part-item">
+                            <img src="https://via.placeholder.com/100?text=Phares" alt="Phares" class="part-image">
+                            <p>Phares</p>
+                        </div>
+                        <div class="part-item">
+                            <img src="https://via.placeholder.com/100?text=Freins" alt="Freins" class="part-image">
+                            <p>Freins</p>
+                        </div>
+                        <div class="part-item">
+                            <img src="https://via.placeholder.com/100?text=Transmission" alt="Transmission" class="part-image">
+                            <p>Transmission</p>
+                        </div>
+                        <div class="part-item">
+                            <img src="https://via.placeholder.com/100?text=Batterie" alt="Batterie" class="part-image">
+                            <p>Batterie</p>
+                        </div>
+                        <div class="part-item">
+                            <img src="https://via.placeholder.com/100?text=Suspension" alt="Suspension" class="part-image">
+                            <p>Suspension</p>
+                        </div>
+                        <div class="part-item">
+                            <img src="https://via.placeholder.com/100?text=Échappement" alt="Échappement" class="part-image">
+                            <p>Échappement</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-parts" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Votre contenu principal ici -->
+    <div style="flex: 1; padding: 30px 0; text-align: center;">
+        <h1 style="color: #ff0000; font-size: 2rem; margin-bottom: 15px;">AUTOPARTS PRO</h1>
+        <p style="color: #ffffff; font-size: 1rem;">Votre spécialiste en pièces automobiles</p>
+    </div>
+    
+    <!-- Footer Compact -->
+    <footer>
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        
+        <div class="container">
+            <div class="footer-content">
+                <!-- Section Contact -->
+                <div class="footer-section animate-on-scroll">
+                    <h3>Contact</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Rue Auto, 75000 Paris</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+33 1 23 45 67 89</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@autoparts.fr</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Lun-Ven: 9h-18h</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="social-links">
+                        <a href="#" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Section Liens rapides -->
+                <div class="footer-section animate-on-scroll">
+                    <h3>Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">Moteur</a></li>
+                        <li><a href="#">Freinage</a></li>
+                        <li><a href="#">Échappement</a></li>
+                        <li><a href="#">Promotions</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Section Services -->
+                <div class="footer-section animate-on-scroll">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Livraison 24h</a></li>
+                        <li><a href="#">Garantie 2 Ans</a></li>
+                        <li><a href="#">Conseils Experts</a></li>
+                        <li><a href="#">Installation</a></li>
+                        <li><a href="#">Retours 30j</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Section Newsletter -->
+                <div class="footer-section animate-on-scroll">
+                    <h3>Newsletter</h3>
+                    <p>Offres spéciales et conseils</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre email" required>
+                        <button type="submit">
+                            OK
+                        </button>
+                    </form>
+                    <p style="font-size: 0.7rem; margin-top: 10px; color: #888;">
+                        🔒 Sans spam
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom animate-on-scroll">
+                <p>&copy; 2024 <span style="color: #ff0000;">AutoParts Pro</span> - Excellence Automobile</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa" title="Visa"></i>
+                    <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fab fa-cc-paypal" title="PayPal"></i>
+                    <i class="fab fa-cc-apple-pay" title="Apple Pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animation au scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -30px 0px'
+            });
+            
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Gestion du formulaire newsletter
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    
+                    // Animation de succès
+                    const button = this.querySelector('button');
+                    const originalText = button.innerHTML;
+                    button.innerHTML = '✓';
+                    button.style.background = 'linear-gradient(135deg, #00ff00, #00cc00)';
+                    
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                        button.style.background = 'linear-gradient(135deg, var(--secondary), #cc0000)';
+                    }, 1500);
+                    
+                    this.reset();
+                });
+            }
+        });
+    </script>
+
+<script src="chatbot.js" defer></script>
+
+  
 </body>
 </html>

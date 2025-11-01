@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pièces BMW - AutoParts Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* ------------------------------
+           GLOBAL STYLES
+        ------------------------------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: #111;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        a { text-decoration: none; color: inherit; }
+        /* ------------------------------
+           HEADER
+        ------------------------------- */
+        .page-header {
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+        }
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: #ff3b30;
+            margin-bottom: 15px;
+        }
+        .car-image {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(255,59,48,0.5);
+            margin-bottom: 20px;
+        }
+        .back-btn {
+            display: flex;
+            margin-top: 10px;
+            padding: 10px 25px;
+            background: #ff3b30;
+            color: #fff;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.2s, background 0.3s;
+        }
+        .back-btn:hover { 
+            transform: scale(1.05);
+            background: #ff6b50;
+        }
+        /* ------------------------------
+           PARTS GRID
+        ------------------------------- */
+        .parts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 30px auto 60px auto;
+            padding: 0 20px;
+        }
+        .part-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,59,48,0.3);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+        .part-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(255,59,48,0.5);
+            border-color: #ff3b30;
+        }
+        .part-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            transition: transform 0.3s;
+        }
+        .part-card:hover img {
+            transform: scale(1.1);
+        }
+        .part-name {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .part-price {
+            color: #ff6b50;
+            font-weight: 500;
+        }
+        /* ------------------------------
+           RESPONSIVE
+        ------------------------------- */
+        @media(max-width:768px) {
+            .page-header h1 { font-size: 2rem; }
+            .parts-grid { grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); }
+        }
+        @media(max-width:480px) {
+            .parts-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-header">
+        <h1>Mitsubishi</h1>
+        <img src="./image/mitsubishi.jpg" alt="Audi" class="car-image">
+        <a href="../loay.html" class="back-btn">← Retour</a>
+    </div>
+
+    <div class="parts-grid">
+        <div class="part-card">
+            <img src="./image/audi moteur.jpg" alt="Moteur">
+            <div class="part-name">Moteur</div>
+            <div class="part-price">À partir de 500 DH</div>
+        </div>
+        <div class="part-card">
+            <img src="./image/audi peneus.jpg" alt="Pneus">
+            <div class="part-name">Pneus</div>
+            <div class="part-price">À partir de 300 DH</div>
+        </div>
+        <div class="part-card">
+            <img src="./image/audi phares.jfif" alt="Phares">
+            <div class="part-name">Phares</div>
+            <div class="part-price">À partir de 200 DH</div>
+        </div>
+        <div class="part-card">
+            <img src="./image/audi freins.jpg" alt="Freins">
+            <div class="part-name">Freins</div>
+            <div class="part-price">À partir de 250 DH</div>
+        </div>
+        <div class="part-card">
+            <img src="./image/audi pare-chocs.jpg" alt="Pare-chocs">
+            <div class="part-name">Pare-chocs</div>
+            <div class="part-price">À partir de 350 DH</div>
+        </div>
+        <div class="part-card">
+            <img src="./image/audi suspension.jpg" alt="Suspension">
+            <div class="part-name">Suspension</div>
+            <div class="part-price">À partir de 400 DH</div>
+        </div>
+        <div class="part-card">
+            <img src="./image/audi transmission.jpg" alt="Transmission">
+            <div class="part-name">Transmission</div>
+            <div class="part-price">À partir de 600 DH</div>
+        </div>
+        <div class="part-card">
+            <img src="./image/audi batterie.jfif" alt="Batterie">
+            <div class="part-name">Batterie</div>
+            <div class="part-price">À partir de 150 DH</div>
+        </div>
+        <div class="part-card">
+            <img src="./image/audi echappement.jpg" alt="Échappement">
+            <div class="part-name">Échappement</div>
+            <div class="part-price">À partir de 450 DH</div>
+        </div>
+        <div class="part-card">
+            <img src="./image/audi retroviseurs.jpg" alt="Rétroviseurs">
+            <div class="part-name">Rétroviseurs</div>
+            <div class="part-price">À partir de 120 DH</div>
+        </div>
+        <div class="part-card">
+            <img src="./image/audi portes.jpg" alt="Portes">
+            <div class="part-name">Portes</div>
+            <div class="part-price">À partir de 800 DH</div>
+        </div>
+        <div class="part-card">
+            <img src="./image/audi capot,jpg.jpg" alt="Capot">
+            <div class="part-name">Capot</div>
+            <div class="part-price">À partir de 900 DH</div>
+        </div>
+    </div>
+</body>
+</html>
