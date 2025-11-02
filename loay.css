@@ -136,33 +136,107 @@ header p {
     font-size: 2.6rem;
 }
 
-body.dark-mode .brand-name .service { color: #fff; }
+body.dark-mode .brand-name .service { color: #000000; }
 
 /* Navigation */
-.nav {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
+/* NAVBAR DE BASE */
+
 
 .nav ul {
-    list-style: none;
-    display: flex;
-    gap: 45px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+    margin-left: 90px;
 }
 
-.nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: color 0.3s, transform 0.2s;
+.nav ul li {
+  position: relative;
 }
 
-.nav a:hover {
-    color: #ff3b30;
-    transform: scale(1.05);
+/* Liens principaux */
+.nav ul li a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+  font-size: 20px;
+
 }
+
+.nav ul li a:hover {
+  color: #ff2f00;
+}
+
+/* --- MENU DÉROULANT --- */
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  padding: 10px 0;
+  min-width: 160px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu li {
+  padding: 8px 16px;
+}
+
+.dropdown-menu li a {
+  position: relative;
+  display: block;
+  padding: 8px 15px;
+  color: #000;
+  text-decoration: none;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.dropdown-menu li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #00e1ff;
+  border-radius: 6px;
+  transition: width 0.4s ease;
+  z-index: -2; /* derrière le texte */
+}
+
+.dropdown-menu li a:hover::before {
+  width: 100%;
+}
+
+.dropdown-menu li a span {
+  position: relative;
+  z-index: 1; /* texte devant le bleu */
+}
+
+/* Affichage au clic */
+.dropdown.active > .dropdown-menu {
+  display: flex;
+}
+
+/* Animation */
+.dropdown-menu {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.dropdown.active > .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .header-right {
     display: flex;
@@ -366,4 +440,22 @@ footer::before{
 @media(max-width:480px){
     .brands-grid{grid-template-columns:1fr;}
 }
+
+.brand-card[data-name="ford"] .brand-logo {
+  width: 180px; /* augmente la taille de l'image */
+  height: auto; /* garde les proportions */
+  transform: scale(1.2); /* zoom visuel */
+}
+
+
+
+
+
+
+
+
+
+
+
+
 

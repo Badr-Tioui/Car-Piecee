@@ -24,7 +24,7 @@ body {
 
 .container {
     width: 100%;
-    max-width: 830px; /* avant 360px */
+    max-width: 670px; /* avant 360px */
     padding: 5px 20px;    /* un peu plus d'espace */
     position: relative;
     z-index: 10;
@@ -35,17 +35,43 @@ body {
     background: rgba(0, 0, 0, 0.7);
     border-radius: 24px;
    
-    box-shadow: 0 8px 24px rgba(255, 0, 0, 0.4), inset 0 0 16px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 9px 94px rgba(255, 0, 0, 0.4), inset 0 0 16px rgba(0, 0, 0, 0.2);
     
     border: 1px solid rgba(255, 0, 0, 0.3);
     transform-style: preserve-3d;
     animation: formEntrance 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
     opacity: 0;
     transform: rotateX(20deg) translateY(100px);
-    padding: 30px 
+    padding: 24px; 
+    
     
 }
 
+
+.titlr
+{
+
+    display: inline-flex
+;
+    font-size: 1.4rem;
+    font-weight: 800;
+    gap: .6rem;
+    justify-content: center;
+    padding-left: 48px;
+    letter-spacing: .02em;
+    margin: 0;
+   align-items: center;
+}
+
+
+.title-icon {
+   margin-bottom: 8px;
+   margin-right: 3px;
+    color: red;
+    display: inline-block;
+    opacity: 0.9;
+    animation: 2.2s ease-in-out 0s infinite normal none running pulse-glow;
+}
 @keyframes formEntrance {
     0% {
         opacity: 0;
@@ -586,4 +612,21 @@ p {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+
+
+@keyframes pulse-glow {
+  0% {
+    transform: translateY(0);
+    filter: drop-shadow(rgba(111, 123, 247, 0.15) 0px 0px 2px);
+  }
+  50% {
+    transform: translateY(-3px);
+    filter: drop-shadow(rgba(111, 123, 247, 0.45) 0px 0px 10px);
+  }
+  100% {
+    transform: translateY(0);
+    filter: drop-shadow(rgba(111, 123, 247, 0.15) 0px 0px 2px);
+  }
 }

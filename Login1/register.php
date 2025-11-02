@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     $stmt = $conn->prepare("INSERT INTO utilisateur (full_name, username, email, passworde,confirm_password) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss", $full_name, $username, $email, $password, $confirm_password);
+    $stmt->bind_param("sssss", $full_name, $username, $email, $hashed_password, $confirm_password);
 
     if ($stmt->execute()) {
     // Redirection vers la page principale après inscription

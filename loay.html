@@ -8,9 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Bootstrap pour les modals et la grille de base -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/loay.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./loay.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="chatbot.css">
+
 
 </head>
 <body>
@@ -26,14 +27,46 @@
     </div>
 
     <nav class="nav">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Parts</a></li>
-        <li><a href="#">Brands</a></li>
-        <li><a href="#">Deals</a></li>
-        <li><a href="#">Contact</a></li>
+  <ul>
+    <li><a href="#">Home</a></li>
+
+    <!-- Parts avec sous-menu -->
+    <li class="dropdown">
+      <a href="#">Parts</a>
+      <ul class="dropdown-menu">
+        <li><a href="Pieces auto/Bugatti-pieces.html">Moteur</a></li>
+        <li><a href="Pieces auto/Chevrolet-pieces.html">Freinage</a></li>
+        <li><a href="Pieces auto/audi-pieces.html">Suspension</a></li>
+        <li><a href="Pieces auto/rolls royce-pieces.html">Transmission</a></li>
       </ul>
-    </nav>
+    </li>
+
+    <!-- Brands avec sous-menu -->
+    <li class="dropdown">
+      <a href="#">Brands</a>
+      <ul class="dropdown-menu">
+        <li><a href="Pieces auto/BMW-pieces.html">BMW</a></li>
+        <li><a href="Pieces auto/audi-pieces.html">Audi</a></li>
+        <li><a href="Pieces auto/alpha-romeo.html">AlphaRomeo</a></li>
+        <li><a href="Pieces auto/Ferrari-pieces.html">Ferrari</a></li>
+      </ul>
+    </li>
+
+    <!-- Deals avec sous-menu -->
+    <li class="dropdown">
+      <a href="#">Deals</a>
+      <ul class="dropdown-menu">
+        <li><a href="Pieces auto/Dacia2-pieces.html">Promotions</a></li>
+        <li><a href="Pieces auto/Golf-pieces.html">Nouveautés</a></li>
+        <li><a href="Pieces auto/Hyundai-pieces.html">Occasions</a></li>
+      </ul>
+    </li>
+
+    <li><a
+           onclick="document.querySelector('#repdqq').scrollIntoView({ behavior: 'smooth' });" style="cursor: pointer;">Contact</a></li>
+  </ul>
+</nav>
+
 
     <div class="header-right">
       <div class="cart-icon">🛒</div>
@@ -61,11 +94,12 @@
 
   <!-- OVERLAY -->
   <div class="overlay">
-   <button class="explore-btn" onclick="document.querySelector('#parts-section').scrollIntoView({ behavior: 'smooth' });">
-   Explore
-</button>
+   <button class="explore-btn" 
+           onclick="document.querySelector('#parts-section').scrollIntoView({ behavior: 'smooth' });">
+     Explore
+   </button>
+</div>
 
-  </div>
 
   <script>
     // Dark/Light Mode Toggle
@@ -77,30 +111,62 @@
   <script>
   const translations = {
     en: {
-      home: "Home",
-      parts: "Parts",
-      brands: "Brands",
-      deals: "Deals",
-      contact: "Contact",
-      explore: "Explore"
+        home: "Home",
+        parts: "Parts",
+        brands: "Brands",
+        deals: "Deals",
+        contact: "Contact",
+        explore: "Explore",
+        partsMenu: ["Engine", "Brakes", "Suspension", "Transmission"],
+        brandsMenu: ["BMW", "Audi", "Mercedes", "Ferrari"],
+        dealsMenu: ["Promotions", "New", "Used"]
     },
     fr: {
-      home: "Accueil",
-      parts: "Pièces",
-      brands: "Marques",
-      deals: "Offres",
-      contact: "Contact",
-      explore: "Explorer"
+        home: "Accueil",
+        parts: "Pièces",
+        brands: "Marques",
+        deals: "Offres",
+        contact: "Contact",
+        explore: "Explorer",
+        partsMenu: ["Moteur", "Freinage", "Suspension", "Transmission"],
+        brandsMenu: ["BMW", "Audi", "Mercedes", "Ferrari"],
+        dealsMenu: ["Promotions", "Nouveautés", "Occasions"]
     },
     ar: {
-      home: "الرئيسية",
-      parts: "القطع",
-      brands: "العلامات",
-      deals: "العروض",
-      contact: "اتصل بنا",
-      explore: "استكشاف"
+        home: "الرئيسية",
+        parts: "القطع",
+        brands: "العلامات",
+        deals: "العروض",
+        contact: "اتصل بنا",
+        explore: "استكشاف",
+        partsMenu: ["المحرك", "الفرامل", "التعليق", "نقل الحركة"],
+        brandsMenu: ["بي إم دبليو", "أودي", "مرسيدس", "فيراري"],
+        dealsMenu: ["العروض", "الجديد", "المستعمل"]
     }
-  };
+};
+
+function switchLanguage(lang) {
+    const t = translations[lang];
+
+    const navLinks = document.querySelectorAll(".nav > ul > li > a");
+    navLinks[0].textContent = t.home;
+    navLinks[1].textContent = t.parts;
+    navLinks[2].textContent = t.brands;
+    navLinks[3].textContent = t.deals;
+    navLinks[4].textContent = t.contact;
+
+    // Sous-menus
+    const partsMenu = document.querySelectorAll(".dropdown:nth-child(2) .dropdown-menu li a");
+    const brandsMenu = document.querySelectorAll(".dropdown:nth-child(3) .dropdown-menu li a");
+    const dealsMenu = document.querySelectorAll(".dropdown:nth-child(4) .dropdown-menu li a");
+
+    partsMenu.forEach((item, i) => item.textContent = t.partsMenu[i]);
+    brandsMenu.forEach((item, i) => item.textContent = t.brandsMenu[i]);
+    dealsMenu.forEach((item, i) => item.textContent = t.dealsMenu[i]);
+
+    document.body.dir = (lang === "ar") ? "rtl" : "ltr";
+}
+
 
   const langSelect = document.getElementById("language");
   const navLinks = document.querySelectorAll(".nav a");
@@ -132,7 +198,7 @@
 
 
 
-    <div class="container">
+    <div class="container" id="parts-section">
        
        <header>
               <h1>Marques & Pièces Auto</h1>
@@ -146,124 +212,124 @@
         <div class="brands-grid" id="brandsGrid">
             <!-- BMW -->
             <div class="brand-card" data-name="BMW">
-                <img src="/imageses/alfa-romeo-logo-0-2048x2048-1.png" alt="BMW Logo" class="brand-logo">
+                <img src="imageses/alfa-romeo-logo-0-2048x2048-1.png" alt="BMW Logo" class="brand-logo">
                 <div class="brand-name">Alfa romeo</div>
-                <a class="btn btn-parts" href="/Pieces auto/alpha-romeo.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/alpha-romeo.html">Voir les pièces</a>
 
             </div>
             <!-- Mercedes -->
             <div class="brand-card" data-name="mercedes">
-                <img src="/imageses/black-and-white-car-symbol-bmw-audi-removebg-preview.png" alt="Mercedes Logo" class="brand-logo">
+                <img src="imageses/black-and-white-car-symbol-bmw-audi-removebg-preview.png" alt="Mercedes Logo" class="brand-logo">
                 <div class="brand-name">Audi</div>
-                <a class="btn btn-parts" href="/Pieces auto/audi-pieces.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/audi-pieces.html">Voir les pièces</a>
             </div>
             <!-- Audi -->
             <div class="brand-card" data-name="audi">
-                <img src="/imageses/bmw-brand-logo-0.png" alt="Audi Logo" class="brand-logo">
+                <img src="imageses/bmw-brand-logo-0.png" alt="Audi Logo" class="brand-logo">
                 <div class="brand-name">BMW</div>
-               <a class="btn btn-parts" href="/Pieces auto/BMW-pieces.html">Voir les pièces</a>
+               <a class="btn btn-parts" href="Pieces auto/BMW-pieces.html">Voir les pièces</a>
             </div>
             <!-- Toyota -->
             <div class="brand-card" data-name="toyota">
-                <img src="/imageses/citroen-logo-e1522874793839.webp" alt="Toyota Logo" class="brand-logo">
+                <img src="imageses/citroen-logo-e1522874793839.webp" alt="Toyota Logo" class="brand-logo">
                 <div class="brand-name">Citroen</div>
-                <a class="btn btn-parts" href="/Pieces auto/Citroen-pieces.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/Citroen-pieces.html">Voir les pièces</a>
             </div>
             <!-- Honda -->
             <div class="brand-card" data-name="honda">
-                <img src="/imageses/Dacia-Logo-2003-711x400.png" alt="Honda Logo" class="brand-logo">
+                <img src="imageses/Dacia-Logo-2003-711x400.png" alt="Honda Logo" class="brand-logo">
                 <div class="brand-name">Dacia</div>
-                <a class="btn btn-parts" href="/Pieces auto/Dacia-pieces.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/Dacia-pieces.html">Voir les pièces</a>
             </div>
             <!-- Ford -->
             <div class="brand-card" data-name="ford">
-                <img src="/imageses/Ferrari-Logo-PNG-Cutout.png" alt="Ford Logo" class="brand-logo">
+                <img src="imageses/Ferrari-Logo-PNG-Cutout.png" alt="Ford Logo" class="brand-logo">
                 <div class="brand-name">Ferrari</div>
-                <a class="btn btn-parts" href="/Pieces auto/Ferrari-pieces.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/Ferrari-pieces.html">Voir les pièces</a>
             </div>
             <!-- Volkswagen -->
             <div class="brand-card" data-name="volkswagen">
-                <img src="/imageses/fiat-3-logo-png-transparent.png" alt="Volkswagen Logo" class="brand-logo">
+                <img src="imageses/fiat-3-logo-png-transparent.png" alt="Volkswagen Logo" class="brand-logo">
                 <div class="brand-name">Fiat</div>
-                <a class="btn btn-parts" href="/Pieces auto/Fiat-pieces.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/Fiat-pieces.html">Voir les pièces</a>
             </div>
             <!-- Renault -->
             <div class="brand-card" data-name="renault">
-                <img src="/imageses/imgbin-honda-logo-car-tata-motors-honda-city-honda-7RvnfPDkF1yw7tyR6sNmz1s8X_t-removebg-preview.png" alt="Renault Logo" class="brand-logo">
+                <img src="imageses/imgbin-honda-logo-car-tata-motors-honda-city-honda-7RvnfPDkF1yw7tyR6sNmz1s8X_t-removebg-preview.png" alt="Renault Logo" class="brand-logo">
                 <div class="brand-name">Hyundai</div>
-                <a class="btn btn-parts" href="/Pieces auto/Hyundai-pieces.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/Hyundai-pieces.html">Voir les pièces</a>
             </div>
             <!-- Peugeot -->
             <div class="brand-card" data-name="peugeot">
-                <img src="/imageses/imgbin-nissan-juke-car-nissan-62EkzBWWjBmUFQxmj9T6Y7BHL_t-removebg-preview.png" alt="Peugeot Logo" class="brand-logo">
+                <img src="imageses/imgbin-nissan-juke-car-nissan-62EkzBWWjBmUFQxmj9T6Y7BHL_t-removebg-preview.png" alt="Peugeot Logo" class="brand-logo">
                 <div class="brand-name">Nissan</div>
-                <a class="btn btn-parts" href="/Pieces auto/Nissan-pieces.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/Nissan-pieces.html">Voir les pièces</a>
             </div>
             <!-- Nissan -->
             <div class="brand-card" data-name="nissan">
-                <img src="/imageses/logo-porsche-1536.png" alt="Nissan Logo" class="brand-logo">
+                <img src="imageses/logo-porsche-1536.png" alt="Nissan Logo" class="brand-logo">
                 <div class="brand-name">Porshe</div>
-                <a class="btn btn-parts" href="/Pieces auto/Porshe-pieces.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/Porshe-pieces.html">Voir les pièces</a>
             </div>
             <!-- Kia -->
             <div class="brand-card" data-name="kia">
-                <img src="/imageses/Maserati-Logo-PNG-Images-HD.png" alt="Kia Logo" class="brand-logo">
+                <img src="imageses/Maserati-Logo-PNG-Images-HD.png" alt="Kia Logo" class="brand-logo">
                 <div class="brand-name">Maserati</div>
-                <a class="btn btn-parts" href="/Pieces auto/Maserati-pieces.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/Maserati-pieces.html">Voir les pièces</a>
             </div>
             <!-- Hyundai -->
             <div class="brand-card" data-name="hyundai">
-                <img src="/imageses/OIP-removebg-preview.png" alt="Hyundai Logo" class="brand-logo">
+                <img src="imageses/OIP-removebg-preview.png" alt="Hyundai Logo" class="brand-logo">
                 <div class="brand-name">Peugot</div>
-                <a class="btn btn-parts" href="/Pieces auto/Peugot-pieces.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/Peugot-pieces.html">Voir les pièces</a>
             </div>
             <!-- Chevrolet -->
             <div class="brand-card" data-name="chevrolet">
-                <img src="/imageses/png-clipart-bugatti-veyron-car-bugatti-chiron-bugatti-vision-gran-turismo-bugatti-emblem-label-thumbnail-removebg-preview.png" alt="Chevrolet Logo" class="brand-logo">
+                <img src="imageses/png-clipart-bugatti-veyron-car-bugatti-chiron-bugatti-vision-gran-turismo-bugatti-emblem-label-thumbnail-removebg-preview.png" alt="Chevrolet Logo" class="brand-logo">
                 <div class="brand-name">Bugatti</div>
-                <a class="btn btn-parts" href="/Pieces auto/Bugatti-pieces.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/Bugatti-pieces.html">Voir les pièces</a>
             </div>
             <!-- Citroën -->
             <div class="brand-card" data-name="citroën">
-                <img src="/imageses/png-clipart-mitsubishi-motors-car-logo-mitsubishi-eclipse-cross-mitsubishi-angle-text-thumbnail-removebg-preview.png" alt="Citroën Logo" class="brand-logo">
+                <img src="imageses/png-clipart-mitsubishi-motors-car-logo-mitsubishi-eclipse-cross-mitsubishi-angle-text-thumbnail-removebg-preview.png" alt="Citroën Logo" class="brand-logo">
                 <div class="brand-name">Mitsubishi</div>
-                <a class="btn btn-parts" href="/Pieces auto/Mitsubishi-pieces.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/Mitsubishi-pieces.html">Voir les pièces</a>
             </div>
             <!-- Fiat -->
             <div class="brand-card" data-name="fiat">
-                <img src="/imageses/R-removebg-preview (1).png" alt="Fiat Logo" class="brand-logo">
+                <img src="imageses/R-removebg-preview (1).png" alt="Fiat Logo" class="brand-logo">
                 <div class="brand-name">Dacia</div>
-                <a class="btn btn-parts" href="/Pieces auto/Dacia2-pieces.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/Dacia2-pieces.html">Voir les pièces</a>
             </div>
             <!-- Mazda -->
             <div class="brand-card" data-name="mazda">
-                <img src="/imageses/R.png" alt="Mazda Logo" class="brand-logo">
+                <img src="imageses/R.png" alt="Mazda Logo" class="brand-logo">
                 <div class="brand-name">Jaguar</div>
-                <a class="btn btn-parts" href="/Pieces auto/Jaguar-pieces.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/Jaguar-pieces.html">Voir les pièces</a>
             </div>
             <!-- Subaru -->
             <div class="brand-card" data-name="subaru">
-                <img src="/imageses/renault-logo-png_seeklogo-264207.png" alt="Subaru Logo" class="brand-logo">
+                <img src="imageses/renault-logo-png_seeklogo-264207.png" alt="Subaru Logo" class="brand-logo">
                 <div class="brand-name">Renault</div>
-                <a class="btn btn-parts" href="/Pieces auto/Renault-pieces.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/Renault-pieces.html">Voir les pièces</a>
             </div>
             <!-- Jeep -->
             <div class="brand-card" data-name="jeep">
-                <img src="/imageses/volkswagen-10-logo-png-transparent.png" alt="Jeep Logo" class="brand-logo">
+                <img src="imageses/volkswagen-10-logo-png-transparent.png" alt="Jeep Logo" class="brand-logo">
                 <div class="brand-name">Golf</div>
-                <a class="btn btn-parts" href="/Pieces auto/Golf-pieces.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/Golf-pieces.html">Voir les pièces</a>
             </div>
 
               <div class="brand-card" data-name="jeep">
                 <img src="https://logos-world.net/wp-content/uploads/2021/04/Rolls-Royce-Motor-Cars-Logo-1911-2020.png" alt="Jeep Logo" class="brand-logo">
                 <div class="brand-name">rolls royce</div>
-                <a class="btn btn-parts" href="/Pieces auto/rolls royce-pieces.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/rolls royce-pieces.html">Voir les pièces</a>
             </div>
 
               <div class="brand-card" data-name="jeep">
                 <img src="https://purepng.com/public/uploads/large/purepng.com-chevrolet-logocarschevroletchevyautomobilelogo-1701527437813ghujm.png" alt="Jeep Logo" class="brand-logo">
                 <div class="brand-name">Chevrolet</div>
-                <a class="btn btn-parts" href="/Pieces auto/Chevrolet-pieces.html">Voir les pièces</a>
+                <a class="btn btn-parts" href="Pieces auto/Chevrolet-pieces.html">Voir les pièces</a>
             </div>
         </div>
     </div>
@@ -319,156 +385,520 @@
         </div>
     </div>
 
+    <!-- SECTION TOP PIÈCES AVIS CLIENTS -->
+<section class="top-pieces" style="padding:40px 20px; background: #000000;">
+    <div class="container">
+        <h2 style="color:#ff0000; text-align:center; margin-bottom:30px;">--Les pièces les plus achetées--</h2>
+        <p style="color:#ccc; text-align:center; margin-bottom:40px;">Découvrez les meilleures pièces selon nos clients</p>
+
+        <div class="pieces-grid" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+            <!-- Pièce exemple -->
+            <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:15px; flex:1 1 250px; max-width:250px; transition:transform 0.3s;">
+                <img src="Pieces auto/image/alfa moteur.jpg" alt="Moteur" style="width:100%; border-radius:10px; margin-bottom:10px;">
+                <h3 style="color:#ff0000; margin:5px 0;">Moteur XYZ</h3>
+                <p style="font-size:0.85rem; color:#ccc;">Performance et durabilité optimale pour votre véhicule.</p>
+                
+                <!-- Avis clients avec étoiles -->
+                <div class="stars" style="margin:10px 0; color:#ffd700;">
+                    ★★★★☆
+                </div>
+                <p style="font-size:0.8rem; color:#888;">125 avis clients</p>
+            </div>
+
+            <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:15px; flex:1 1 250px; max-width:250px; transition:transform 0.3s;">
+                <img src="Pieces auto/image/alfa freines.jpg" alt="Freins" style="width:100%; border-radius:10px; margin-bottom:10px;">
+                <h3 style="color:#ff0000; margin:5px 0;">Freins Sport</h3>
+                <p style="font-size:0.85rem; color:#ccc;">Sécurité maximale avec freinage rapide et précis.</p>
+                <div class="stars" style="margin:10px 0; color:#ffd700;">
+                    ★★★★★
+                </div>
+                <p style="font-size:0.8rem; color:#888;">98 avis clients</p>
+            </div>
+
+            <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:15px; flex:1 1 250px; max-width:250px; transition:transform 0.3s;">
+                <img src="Pieces auto/image/alfa suspension.jpg" alt="Suspension" style="width:100%; border-radius:10px; margin-bottom:10px;">
+                <h3 style="color:#ff0000; margin:5px 0;">Suspension Pro</h3>
+                <p style="font-size:0.85rem; color:#ccc;">Confort et stabilité pour tous types de routes.</p>
+                <div class="stars" style="margin:10px 0; color:#ffd700;">
+                    ★★★★☆
+                </div>
+                <p style="font-size:0.8rem; color:#888;">76 avis clients</p>
+            </div>
+
+
+              <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:15px; flex:1 1 250px; max-width:250px; transition:transform 0.3s;">
+                <img src="Pieces auto/image/alfa capot.jpg" alt="Capot" style="width:100%; border-radius:10px; margin-bottom:10px;">
+                <h3 style="color:#ff0000; margin:5px 0;">Capot</h3>
+                <p style="font-size:0.85rem; color:#ccc;">Performance et durabilité optimale pour votre véhicule.</p>
+                
+                <!-- Avis clients avec étoiles -->
+                <div class="stars" style="margin:10px 0; color:#ffd700;">
+                    ★★★★☆
+                </div>
+                <p style="font-size:0.8rem; color:#888;">125 avis clients</p>
+            </div>
+
+            <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:15px; flex:1 1 250px; max-width:250px; transition:transform 0.3s;">
+                <img src="Pieces auto/image/alfa peneus.jpg" alt="Pneus" style="width:100%; border-radius:10px; margin-bottom:10px;">
+                <h3 style="color:#ff0000; margin:5px 0;">Pneus Cassé</h3>
+                <p style="font-size:0.85rem; color:#ccc;">Sécurité maximale avec freinage rapide et précis.</p>
+                <div class="stars" style="margin:10px 0; color:#ffd700;">
+                    ★★★★★
+                </div>
+                <p style="font-size:0.8rem; color:#888;">98 avis clients</p>
+            </div>
+
+            <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:15px; flex:1 1 250px; max-width:250px; transition:transform 0.3s;">
+                <img src="Pieces auto/image/alfa batterrie.jpg" alt="Baterrie" style="width:100%; border-radius:10px; margin-bottom:10px;">
+                <h3 style="color:#ff0000; margin:5px 0;">Baterrie</h3>
+                <p style="font-size:0.85rem; color:#ccc;">Confort et stabilité pour tous types de routes.</p>
+                <div class="stars" style="margin:10px 0; color:#ffd700;">
+                    ★★★★☆
+                </div>
+                <p style="font-size:0.8rem; color:#888;">76 avis clients</p>
+            </div>
+
+             <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:15px; flex:1 1 250px; max-width:250px; transition:transform 0.3s;">
+                <img src="Pieces auto/image/alfa retroviseur.jpg" alt="Retroviseur" style="width:100%; border-radius:10px; margin-bottom:10px;">
+                <h3 style="color:#ff0000; margin:5px 0;">Retroviseur</h3>
+                <p style="font-size:0.85rem; color:#ccc;">Confort et stabilité pour tous types de routes.</p>
+                <div class="stars" style="margin:10px 0; color:#ffd700;">
+                    ★★★★☆
+                </div>
+                <p style="font-size:0.8rem; color:#888;">76 avis clients</p>
+            </div>
+
+
+             <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:15px; flex:1 1 250px; max-width:250px; transition:transform 0.3s;">
+                <img src="Pieces auto/image/audi transmission.jpg" alt="Tranmission" style="width:100%; border-radius:10px; margin-bottom:10px;">
+                <h3 style="color:#ff0000; margin:5px 0;">Tranmission</h3>
+                <p style="font-size:0.85rem; color:#ccc;">Confort et stabilité pour tous types de routes.</p>
+                <div class="stars" style="margin:10px 0; color:#ffd700;">
+                    ★★★★☆
+                </div>
+                <p style="font-size:0.8rem; color:#888;">76 avis clients</p>
+            </div>
+    
+
+        </div>
+    </div>
+</section>
+
+<!-- CSS pour la section Top Pièces -->
+<style>
+
+
+.top-pieces .pieces-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Force 3 cartes par ligne */
+.top-pieces .piece-card {
+    flex: 1 1 calc(33.33% - 20px); /* 3 cartes par ligne avec gap */
+    max-width: calc(33.33% - 20px);
+    background: #000000;
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.3s;
+    
+}
+
+/* Hover animation */
+.top-pieces .piece-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Stars style */
+.top-pieces .stars {
+    font-size:1rem;
+    letter-spacing:1px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .top-pieces .piece-card {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .top-pieces .pieces-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .top-pieces .piece-card {
+        flex: 1 1 90%;
+        max-width: 90%;
+    }
+}
+
+
+</style>
+
+
+
 
     <!-- Votre contenu principal ici -->
-    <div style="flex: 1; padding: 30px 0; text-align: center;">
-        <h1 style="color: #ff0000; font-size: 2rem; margin-bottom: 15px;">AUTOPARTS PRO</h1>
-        <p style="color: #ffffff; font-size: 1rem;">Votre spécialiste en pièces automobiles</p>
+  <!-- FOOTER MODERNE -->
+<footer class="footer-modern" id="repdqq">
+    <div class="footer-container">
+        <!-- Logo et slogan -->
+        <div class="footer-logo animate-on-scroll">
+            <h2>AUTOPARTS PRO</h2>
+            <p>Votre spécialiste en pièces automobiles</p>
+        </div>
+
+        <!-- Sections du footer -->
+        <div class="footer-sections">
+            <!-- Contact -->
+            <div class="footer-section animate-on-scroll">
+                <h3>Contact</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Rue Auto, 75000 Paris</li>
+                    <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
+                    <li><i class="fas fa-envelope"></i> contact@autoparts.fr</li>
+                    <li><i class="fas fa-clock"></i> Lun-Ven: 9h-18h</li>
+                    <li><i class="fab fa-whatsapp"></i> +33 6 12 34 56 78</li>
+                </ul>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Liens rapides -->
+            <div class="footer-section animate-on-scroll">
+                <h3>Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Moteur</a></li>
+                    <li><a href="#">Freinage</a></li>
+                    <li><a href="#">Échappement</a></li>
+                    <li><a href="#">Promotions</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-section animate-on-scroll">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Livraison 24h</a></li>
+                    <li><a href="#">Garantie 2 Ans</a></li>
+                    <li><a href="#">Conseils Experts</a></li>
+                    <li><a href="#">Installation</a></li>
+                    <li><a href="#">Retours 30j</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-section animate-on-scroll">
+                <h3>Newsletter</h3>
+                <p>Offres spéciales et conseils</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Votre email" required>
+                    <button type="submit">OK</button>
+                </form>
+                <p class="newsletter-note">🔒 Sans spam</p>
+            </div>
+        </div>
+
+        <!-- Bas du footer -->
+        <div class="footer-bottom animate-on-scroll">
+            <p>&copy; 2024 <span>AUTOPARTS PRO</span> - Excellence Automobile</p>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa" title="Visa"></i>
+                <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                <i class="fab fa-cc-paypal" title="PayPal"></i>
+                <i class="fab fa-cc-apple-pay" title="Apple Pay"></i>
+            </div>
+        </div>
     </div>
-    
-    <!-- Footer Compact -->
-    <footer>
-        <div class="floating-elements">
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-        </div>
-        
-        <div class="container">
-            <div class="footer-content">
-                <!-- Section Contact -->
-                <div class="footer-section animate-on-scroll">
-                    <h3>Contact</h3>
-                    <ul class="contact-info">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>123 Rue Auto, 75000 Paris</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span>+33 1 23 45 67 89</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>contact@autoparts.fr</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span>Lun-Ven: 9h-18h</span>
-                        </li>
-                    </ul>
-                    
-                    <div class="social-links">
-                        <a href="#" title="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" title="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" title="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" title="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Section Liens rapides -->
-                <div class="footer-section animate-on-scroll">
-                    <h3>Navigation</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Accueil</a></li>
-                        <li><a href="#">Moteur</a></li>
-                        <li><a href="#">Freinage</a></li>
-                        <li><a href="#">Échappement</a></li>
-                        <li><a href="#">Promotions</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Section Services -->
-                <div class="footer-section animate-on-scroll">
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Livraison 24h</a></li>
-                        <li><a href="#">Garantie 2 Ans</a></li>
-                        <li><a href="#">Conseils Experts</a></li>
-                        <li><a href="#">Installation</a></li>
-                        <li><a href="#">Retours 30j</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Section Newsletter -->
-                <div class="footer-section animate-on-scroll">
-                    <h3>Newsletter</h3>
-                    <p>Offres spéciales et conseils</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Votre email" required>
-                        <button type="submit">
-                            OK
-                        </button>
-                    </form>
-                    <p style="font-size: 0.7rem; margin-top: 10px; color: #888;">
-                        🔒 Sans spam
-                    </p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom animate-on-scroll">
-                <p>&copy; 2024 <span style="color: #ff0000;">AutoParts Pro</span> - Excellence Automobile</p>
-                <div class="payment-methods">
-                    <i class="fab fa-cc-visa" title="Visa"></i>
-                    <i class="fab fa-cc-mastercard" title="Mastercard"></i>
-                    <i class="fab fa-cc-paypal" title="PayPal"></i>
-                    <i class="fab fa-cc-apple-pay" title="Apple Pay"></i>
-                </div>
-            </div>
-        </div>
-    </footer>
+</footer>
+
+<style>
+/* Footer moderne */
+.footer-modern {
+    background: black;
+    color: #fff;
+    padding: 60px 20px 30px;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 70px;
+}
+
+.footer-modern .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo h2 {
+    color: #ff0000;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    color: #ccc;
+    font-size: 1rem;
+}
+
+.footer-sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.footer-section {
+    flex: 1 1 220px;
+    margin: 15px;
+    transition: transform 0.4s ease, opacity 0.6s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.footer-section.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.footer-section h3::after {
+    content: '';
+    width: 50px;
+    height: 2px;
+    background: #ff0000;
+    display: block;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+.footer-links, .contact-info {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li, .contact-info li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00e1ff;
+}
+
+.contact-info li i {
+    margin-right: 8px;
+    color: #ff0000;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #ccc;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #00e1ff;
+    transform: translateY(-5px);
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 10px;
+}
+
+.newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 4px 0 0 4px;
+    border: none;
+    outline: none;
+}
+
+.newsletter-form button {
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background: #00e1ff;
+    color: #000;
+}
+
+.newsletter-note {
+    font-size: 0.7rem;
+    color: #888;
+    margin-top: 5px;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-bottom span {
+    color: #ff0000;
+}
+
+.payment-methods i {
+    margin-left: 10px;
+    font-size: 1.2rem;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.payment-methods i:hover {
+    color: #00e1ff;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+    .footer-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-section {
+        margin: 15px 0;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+</style>
 
     <script>
-        // Animation au scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const animateElements = document.querySelectorAll('.animate-on-scroll');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animated');
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -30px 0px'
-            });
-            
-            animateElements.forEach(element => {
-                observer.observe(element);
-            });
-            
-            // Gestion du formulaire newsletter
-            const newsletterForm = document.querySelector('.newsletter-form');
-            if (newsletterForm) {
-                newsletterForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const email = this.querySelector('input[type="email"]').value;
-                    
-                    // Animation de succès
-                    const button = this.querySelector('button');
-                    const originalText = button.innerHTML;
-                    button.innerHTML = '✓';
-                    button.style.background = 'linear-gradient(135deg, #00ff00, #00cc00)';
-                    
-                    setTimeout(() => {
-                        button.innerHTML = originalText;
-                        button.style.background = 'linear-gradient(135deg, var(--secondary), #cc0000)';
-                    }, 1500);
-                    
-                    this.reset();
-                });
+        function switchLanguage(lang) {
+    const t = translations[lang];
+
+    const navLinks = document.querySelectorAll(".nav > ul > li > a");
+    navLinks[0].textContent = t.home;
+    navLinks[1].textContent = t.parts;
+    navLinks[2].textContent = t.brands;
+    navLinks[3].textContent = t.deals;
+    navLinks[4].textContent = t.contact;
+
+    // Sous-menus
+    const partsMenu = document.querySelectorAll(".dropdown:nth-child(2) .dropdown-menu li a");
+    const brandsMenu = document.querySelectorAll(".dropdown:nth-child(3) .dropdown-menu li a");
+    const dealsMenu = document.querySelectorAll(".dropdown:nth-child(4) .dropdown-menu li a");
+
+    partsMenu.forEach((item, i) => item.textContent = t.partsMenu[i]);
+    brandsMenu.forEach((item, i) => item.textContent = t.brandsMenu[i]);
+    dealsMenu.forEach((item, i) => item.textContent = t.dealsMenu[i]);
+
+    document.body.dir = (lang === "ar") ? "rtl" : "ltr";
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // ----------------------------
+    // 1. Animation au scroll
+    // ----------------------------
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
             }
         });
-    </script>
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -30px 0px'
+    });
+    animateElements.forEach(el => observer.observe(el));
+
+    // ----------------------------
+    // 2. Newsletter Form
+    // ----------------------------
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const emailInput = newsletterForm.querySelector('input[type="email"]');
+            const button = newsletterForm.querySelector('button');
+
+            // Animation succès
+            const originalText = button.innerHTML;
+            button.innerHTML = '✓';
+            button.style.background = 'linear-gradient(135deg, #00ff00, #00cc00)';
+
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.style.background = 'linear-gradient(135deg, var(--secondary), #cc0000)';
+            }, 1500);
+
+            newsletterForm.reset();
+        });
+    }
+
+    // ----------------------------
+    // 3. Menus déroulants
+    // ----------------------------
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    function closeAllDropdowns(except = null) {
+        dropdowns.forEach(drop => {
+            if (drop !== except) drop.classList.remove('active');
+        });
+    }
+
+    dropdowns.forEach(drop => {
+        const link = drop.querySelector('a');
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            drop.classList.toggle('active');
+            closeAllDropdowns(drop);
+        });
+    });
+
+    // Ferme les menus si on clique en dehors
+    document.addEventListener('click', e => {
+        if (!e.target.closest('.dropdown')) {
+            closeAllDropdowns();
+        }
+    });
+
+});
+</script>
+
 
 <script src="chatbot.js" defer></script>
 
