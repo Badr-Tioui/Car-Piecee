@@ -388,12 +388,43 @@ function switchLanguage(lang) {
     <!-- SECTION TOP PIÈCES AVIS CLIENTS -->
 <section class="top-pieces" style="padding:40px 20px; background: #000000;">
     <div class="container">
-        <h2 style="color:#ff0000; text-align:center; margin-bottom:30px;">--Les pièces les plus achetées--</h2>
-        <p style="color:#ccc; text-align:center; margin-bottom:40px;">Découvrez les meilleures pièces selon nos clients</p>
+       <h2 style="
+    color: #ff4c4c;
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: 'Cinzel', serif;
+    font-size: 36px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 76, 76, 0.6), 0 0 20px rgba(255, 0, 0, 0.3);
+    animation: pulse 2.5s infinite ease-in-out;
+">
+    🚗 Les pièces les plus achetées
+</h2>
+       <p style="
+    color: #9cd7ff;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(108, 195, 249, 0.5);
+    opacity: 0.9;
+">
+    Découvrez les meilleures pièces choisies par nos clients
+</p>
 
-        <div class="pieces-grid" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+<style>
+@keyframes pulse {
+  0% { text-shadow: 0 0 10px rgba(255, 76, 76, 0.6), 0 0 20px rgba(255, 0, 0, 0.3); }
+  50% { text-shadow: 0 0 20px rgba(255, 76, 76, 1), 0 0 30px rgba(255, 0, 0, 0.6); }
+  100% { text-shadow: 0 0 10px rgba(255, 76, 76, 0.6), 0 0 20px rgba(255, 0, 0, 0.3); }
+}
+</style>
+
+        <div class="pieces-grid" style="display:flex; flex-wrap:wrap; justify-content:center; gap:32px;">
             <!-- Pièce exemple -->
-            <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:15px; flex:1 1 250px; max-width:250px; transition:transform 0.3s;">
+            <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:24px; flex:1 1 300px; max-width:370px; transition:transform 0.3s;">
                 <img src="Pieces_auto/image/alfa moteur.jpg" alt="Moteur" style="width:100%; border-radius:10px; margin-bottom:10px;">
                 <h3 style="color:#ff0000; margin:5px 0;">Moteur XYZ</h3>
                 <p style="font-size:0.85rem; color:#ccc;">Performance et durabilité optimale pour votre véhicule.</p>
@@ -405,7 +436,7 @@ function switchLanguage(lang) {
                 <p style="font-size:0.8rem; color:#888;">125 avis clients</p>
             </div>
 
-            <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:15px; flex:1 1 250px; max-width:250px; transition:transform 0.3s;">
+            <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:24px; flex:1 1  300px; max-width:370px; transition:transform 0.3s;">
                 <img src="Pieces_auto/image/alfa freines.jpg" alt="Freins" style="width:100%; border-radius:10px; margin-bottom:10px;">
                 <h3 style="color:#ff0000; margin:5px 0;">Freins Sport</h3>
                 <p style="font-size:0.85rem; color:#ccc;">Sécurité maximale avec freinage rapide et précis.</p>
@@ -415,7 +446,7 @@ function switchLanguage(lang) {
                 <p style="font-size:0.8rem; color:#888;">98 avis clients</p>
             </div>
 
-            <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:15px; flex:1 1 250px; max-width:250px; transition:transform 0.3s;">
+            <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:24px; flex:1 1  300px; max-width:370px; transition:transform 0.3s;">
                 <img src="Pieces_auto/image/alfa suspension.jpg" alt="Suspension" style="width:100%; border-radius:10px; margin-bottom:10px;">
                 <h3 style="color:#ff0000; margin:5px 0;">Suspension Pro</h3>
                 <p style="font-size:0.85rem; color:#ccc;">Confort et stabilité pour tous types de routes.</p>
@@ -426,7 +457,7 @@ function switchLanguage(lang) {
             </div>
 
 
-              <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:15px; flex:1 1 250px; max-width:250px; transition:transform 0.3s;">
+              <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:24px; flex:1 1  300px; max-width:370px; transition:transform 0.3s;">
                 <img src="Pieces_auto/image/alfa capot.jpg" alt="Capot" style="width:100%; border-radius:10px; margin-bottom:10px;">
                 <h3 style="color:#ff0000; margin:5px 0;">Capot</h3>
                 <p style="font-size:0.85rem; color:#ccc;">Performance et durabilité optimale pour votre véhicule.</p>
@@ -438,7 +469,7 @@ function switchLanguage(lang) {
                 <p style="font-size:0.8rem; color:#888;">125 avis clients</p>
             </div>
 
-            <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:15px; flex:1 1 250px; max-width:250px; transition:transform 0.3s;">
+            <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:24px; flex:1 1  300px; max-width:370px; transition:transform 0.3s;">
                 <img src="Pieces_auto/image/alfa peneus.jpg" alt="Pneus" style="width:100%; border-radius:10px; margin-bottom:10px;">
                 <h3 style="color:#ff0000; margin:5px 0;">Pneus Cassé</h3>
                 <p style="font-size:0.85rem; color:#ccc;">Sécurité maximale avec freinage rapide et précis.</p>
@@ -448,7 +479,7 @@ function switchLanguage(lang) {
                 <p style="font-size:0.8rem; color:#888;">98 avis clients</p>
             </div>
 
-            <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:15px; flex:1 1 250px; max-width:250px; transition:transform 0.3s;">
+            <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:24px; flex:1 1 300px; max-width:370px;transition:transform 0.3s;">
                 <img src="Pieces_auto/image/alfa batterrie.jpg" alt="Baterrie" style="width:100%; border-radius:10px; margin-bottom:10px;">
                 <h3 style="color:#ff0000; margin:5px 0;">Baterrie</h3>
                 <p style="font-size:0.85rem; color:#ccc;">Confort et stabilité pour tous types de routes.</p>
@@ -458,7 +489,7 @@ function switchLanguage(lang) {
                 <p style="font-size:0.8rem; color:#888;">76 avis clients</p>
             </div>
 
-             <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:15px; flex:1 1 250px; max-width:250px; transition:transform 0.3s;">
+             <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:24px; flex:1 1  300px; max-width:370px; transition:transform 0.3s;">
                 <img src="Pieces_auto/image/alfa retroviseur.jpg" alt="Retroviseur" style="width:100%; border-radius:10px; margin-bottom:10px;">
                 <h3 style="color:#ff0000; margin:5px 0;">Retroviseur</h3>
                 <p style="font-size:0.85rem; color:#ccc;">Confort et stabilité pour tous types de routes.</p>
@@ -469,7 +500,7 @@ function switchLanguage(lang) {
             </div>
 
 
-             <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:15px; flex:1 1 250px; max-width:250px; transition:transform 0.3s;">
+             <div class="piece-card" style="background:#222; color:#fff; border-radius:10px; padding:24px; flex:1 1  300px; max-width:370px;transition:transform 0.3s;">
                 <img src="Pieces_auto/image/audi transmission.jpg" alt="Tranmission" style="width:100%; border-radius:10px; margin-bottom:10px;">
                 <h3 style="color:#ff0000; margin:5px 0;">Tranmission</h3>
                 <p style="font-size:0.85rem; color:#ccc;">Confort et stabilité pour tous types de routes.</p>
@@ -560,10 +591,10 @@ function switchLanguage(lang) {
                 <h3>Contact</h3>
                 <ul class="contact-info">
                     <li><i class="fas fa-map-marker-alt"></i> 123 Rue Auto, 75000 Paris</li>
-                    <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
+                    <li><i class="fas fa-phone"></i> 0621358366</li>
                     <li><i class="fas fa-envelope"></i> contact@autoparts.fr</li>
                     <li><i class="fas fa-clock"></i> Lun-Ven: 9h-18h</li>
-                    <li><i class="fab fa-whatsapp"></i> +33 6 12 34 56 78</li>
+                    <li><i class="fab fa-whatsapp"></i> 0621358366</li>
                 </ul>
                 <div class="social-links">
                     <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>

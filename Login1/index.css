@@ -630,3 +630,30 @@ p {
     filter: drop-shadow(rgba(111, 123, 247, 0.15) 0px 0px 2px);
   }
 }
+
+
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 25%;
+    cursor: pointer;
+    color: #6bc3f9;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.toggle-password:hover {
+    color: #ff4c4c;
+    transform: scale(1.2);
+}
+
+#eyeOpen {
+    display: none;
+    color: #6bc3f9;
+}
+
+#eyeClosed {
+    display: inline;
+    color: #6bc3f9;
+}
+
