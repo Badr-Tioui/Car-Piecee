@@ -44,11 +44,6 @@ html, body {
   animation: flowMove 14s linear infinite;
   opacity:0.95;
 }
-@keyframes flowMove {
-  0% { transform: translate3d(0,0,0) scale(1); }
-  50% { transform: translate3d(-6%,4%,0) scale(1.02); }
-  100% { transform: translate3d(0,0,0) scale(1); }
-}
 
 /* particles canvas */
 #fx-canvas
@@ -230,8 +225,6 @@ input:focus
 }
 
 
-@keyframes shimmer{0%{left:-60%}70%{left:160%}100%{left:160%}}
-
 .pay-ico
 {
   background:rgba(255,255,255,0.95);padding:8px;border-radius:8px;font-size:14px
@@ -294,7 +287,7 @@ input:focus
  background:var(--card); box-shadow:inset 0 2px 10px rgba(0,0,0,0.7); 
 
 }
-@keyframes spin{100%{transform:rotate(360deg)}}
+
 
 /* floating neon 'PAYMENT' title - slightly above bottom */
 .payment-title
@@ -312,28 +305,6 @@ input:focus
   transform-origin:center;
 }
 
-
-
-@keyframes floatY {
-  0% { transform: translateX(-50%) translateY(0) scale(1); }
-  50% { transform: translateX(-50%) translateY(-10px) scale(1.02); }
-  100% { transform: translateX(-50%) translateY(0) scale(1); }
-}
-/* color shift between red and blue */
-@keyframes neonShift {
-  0% { text-shadow:
-        0 0 36px rgba(255,43,43,0.42),
-        0 0 80px rgba(62,197,255,0.00),
-        0 14px 30px rgba(0,0,0,0.6); color: var(--accent); }
-  50% { text-shadow:
-        0 0 26px rgba(255,43,43,0.12),
-        0 0 120px rgba(62,197,255,0.38),
-        0 14px 30px rgba(0,0,0,0.6); color: var(--neon-blue); }
-  100% { text-shadow:
-        0 0 36px rgba(255,43,43,0.42),
-        0 0 80px rgba(62,197,255,0.00),
-        0 14px 30px rgba(0,0,0,0.6); color: var(--accent); }
-}
 
 
 
