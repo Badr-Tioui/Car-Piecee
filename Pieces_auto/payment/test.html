@@ -15,7 +15,14 @@
     --glass: rgba(255,255,255,0.03);
     --muted: #9b9b9b;
   }
-  *{box-sizing:border-box;font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+  *
+  {
+    box-sizing:border-box;
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial
+  }
+
+
+
 html, body {
   height: 100%;
   margin: 0;
@@ -44,10 +51,23 @@ html, body {
 }
 
 /* particles canvas */
-#fx-canvas{position:fixed;inset:0;z-index:1;pointer-events:none;display:block}
+#fx-canvas
+{position:fixed;inset:0;z-index:1;pointer-events:none;display:block
+}
+
 
 /* stage and card */
-.stage{position:relative;z-index:2;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px}
+.stage
+{position:relative;
+  z-index:2;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px
+}
+
+
 .card {
   width: 990px; max-width:calc(100% - 48px);
   display:grid; grid-template-columns: 420px 1fr; gap:28px;
@@ -56,34 +76,76 @@ html, body {
   border:1px solid rgba(255,43,43,0.12);
   box-shadow: 0 0 89px 22px rgba(255, 0, 0, 0.6), 0 0 40px rgba(255,43,43,0.06) inset;
   transform-style:preserve-3d; transition:transform .15s ease-out; backdrop-filter: blur(6px) saturate(20%);
-
   transform: none !important;
-
 
 }
 
 /* left panel */
-.panel-left{
+.panel-left
+{
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
   border-radius:12px; padding:20px; display:flex;flex-direction:column;align-items:center;justify-content:center;
   position:relative; overflow:hidden; border:1px solid rgba(255,43,43,0.06);
 }
-.neon-rings{ position:absolute; inset:0; pointer-events:none;
-  
+
+.neon-rings
+{ position:absolute; 
+  inset:0;
+  pointer-events:none;
   mix-blend-mode:screen;
 }
-.logo{ width:220px;height:auto;margin-bottom:18px; filter: drop-shadow(0 8px 22px rgba(255,43,43,0.18)) saturate(130%); transform:translateZ(30px); transition: transform .25s; }
-.left-title{font-weight:800;font-size:20px;color:var(--accent);letter-spacing:0.6px;margin-bottom:6px;text-transform:uppercase}
-.left-sub{color:var(--muted);font-size:13px;margin-bottom:12px;text-align:center;padding:0 6px}
+.logo
+{ width:220px;
+  height:auto;
+  margin-bottom:18px;
+  filter: drop-shadow(0 8px 22px rgba(255,43,43,0.18)) saturate(130%);
+  transform:translateZ(30px);
+  transition: transform .25s;
+ }
+.left-title
+{
+  font-weight:800;
+  font-size:20px;color:var(--accent);
+  letter-spacing:0.6px;margin-bottom:6px;
+  text-transform:uppercase
+}
+.left-sub
+{color:var(--muted);
+  font-size:13px;
+  margin-bottom:12px;
+  text-align:center;
+  padding:0 6px
+}
 
 /* right panel form */
-.panel-right{padding:8px 6px 12px 6px;display:flex;flex-direction:column;justify-content:space-between}
-form{display:flex;flex-direction:column;gap:12px;padding:6px}
-label{display:block;font-size:18px;color:#ffffff;font-weight:700;margin-bottom:6px}
+.panel-right
+{
+  padding:8px 6px 12px 6px;
+  display:flex;flex-direction:column;
+  justify-content:space-between
+}
+form
+{
+  display:flex;
+  flex-direction:column;
+  gap:12px;padding:6px
+}
+
+label
+{display:block;
+  font-size:18px;
+  color:#ffffff;
+  font-weight:700;
+  margin-bottom:6px
+}
 
 
-.row{display:flex;gap:10px}
-input[type="text"], input[type="tel"], input[type="email"]{
+.row{display:flex;
+  gap:10px}
+
+
+input[type="text"], input[type="tel"], input[type="email"]
+{
   background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border:2px solid rgb(119, 0, 255); 
   padding:12px 16px;border-radius:15px;
@@ -93,14 +155,22 @@ input[type="text"], input[type="tel"], input[type="email"]{
   transition: box-shadow .18s, transform .12s, border-color .12s;
   outline:none;
 }
-input:focus{
+input:focus
+{
   border-color:var(--accent);
   box-shadow: 0 6px 18px rgba(255, 0, 0, 0.12), 0 0 12px rgba(255,43,43,0.08);
   transform:translateY(-1px);
 }
 
 /* cards row (VISA MC AMEX) */
-.cards-row{display:flex;gap:12px;align-items:center;justify-content:flex-start;margin-top:6px}
+.cards-row
+{display:flex;
+  gap:12px;align-items:center;
+  justify-content:flex-start;
+  margin-top:6px
+}
+
+
 .card-pill{
   width:66px;height:40px;border-radius:8px;background:#121212;border:1px solid rgba(255,255,255,0.03);
   display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:12px;
@@ -109,7 +179,8 @@ input:focus{
   position:relative; z-index:2;
 }
 /* hover effect: grow + blue glow */
-.card-pill:hover{
+.card-pill:hover
+{
   transform: scale(1.14);
   box-shadow: 0 14px 30px rgba(62,197,255,0.18), 0 6px 18px rgba(0,0,0,0.6);
   background: linear-gradient(180deg, rgba(62,197,255,0.08), rgba(62,197,255,0.03));
@@ -118,32 +189,116 @@ input:focus{
 }
 
 /* pay button with neon/shimmer */
-.pay-wrap{margin-top:18px;display:flex;gap:12px;align-items:center}
+.pay-wrap
+{
+  margin-top:18px;
+  display:flex;
+  gap:12px;
+  align-items:center
+
+
+}
+
+
 .pay-btn{
   position:relative; overflow:hidden; border-radius:10px; padding:12px 52px; border:none;
   background:linear-gradient(90deg,rgb(32, 29, 29),rgb(255, 0, 0)); color:#ffffff; font-weight:800; font-size:15px; cursor:pointer;
   box-shadow:0 6px 30px rgba(255,43,43,0.2); display:inline-flex;align-items:center;gap:10px;justify-content:center;
   transition: transform .14s ease, box-shadow .14s ease;
 }
-.pay-btn:hover{ transform:translateY(-3px); box-shadow:0 14px 50px rgba(62,197,255,0.20)}
-.pay-btn:active{ transform:translateY(0) }
-.pay-btn .shimmer{ position:absolute; left:-60%; top:0; width:40%; height:200%; background:linear-gradient(120deg, transparent, rgba(255,255,255,0.12), transparent); transform:skewX(-20deg); transition: none; animation:shimmer 2.2s linear infinite; }
+
+
+
+.pay-btn:hover
+{ 
+  transform:translateY(-3px);
+  box-shadow:0 14px 50px rgba(62,197,255,0.20)
+}
+.pay-btn:active
+{
+   transform:translateY(0) 
+}
+.pay-btn .shimmer
+{ 
+  position:absolute;
+   left:-60%; top:0;
+    width:40%; height:200%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.12), transparent);
+    transform:skewX(-20deg); transition: none;
+    animation:shimmer 2.2s linear infinite; 
+
+}
+
+
 @keyframes shimmer{0%{left:-60%}70%{left:160%}100%{left:160%}}
-.pay-ico{background:rgba(255,255,255,0.95);padding:8px;border-radius:8px;font-size:14px}
+
+.pay-ico
+{
+  background:rgba(255,255,255,0.95);padding:8px;border-radius:8px;font-size:14px
+}
 
 /* small info */
-.meta{display:flex;gap:14px;align-items:center;margin-top:12px;color:var(--muted);font-size:13px}
-.meta .dot{width:10px;height:10px;border-radius:999px;background:rgba(255,43,43,0.18);display:inline-block;box-shadow:0 0 8px rgba(255,43,43,0.06)}
+
+.meta
+{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  margin-top:12px;
+  color:var(--muted);
+  font-size:13px
+
+}
+
+
+.meta .dot
+{
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background:rgba(255,43,43,0.18);
+  display:inline-block;
+  box-shadow:0 0 8px rgba(255,43,43,0.06)
+
+
+}
 
 /* loader overlay */
-.loader-overlay{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55)); z-index:6; backdrop-filter: blur(2px); }
-.spinner{ width:120px; height:120px; border-radius:50%; display:flex; align-items:center; justify-content:center; position:relative;
-  background:conic-gradient(rgba(255,43,43,0.12), rgba(255,43,43,0.6), rgba(255,107,107,0.12)); box-shadow:0 10px 50px rgba(255,43,43,0.12), 0 0 30px rgba(255,43,43,0.06); animation:spin 1.4s linear infinite; }
-.spinner:after{ content:""; position:absolute; inset:12px; border-radius:50%; background:var(--card); box-shadow:inset 0 2px 10px rgba(0,0,0,0.7); }
+.loader-overlay
+{ 
+  position:fixed; inset:0;
+  display:flex; align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55));
+  z-index:6;
+  backdrop-filter: blur(2px); 
+}
+
+
+.spinner{ width:120px;
+  height:120px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  background:conic-gradient(rgba(255,43,43,0.12), rgba(255,43,43,0.6), rgba(255,107,107,0.12)); box-shadow:0 10px 50px rgba(255,43,43,0.12), 0 0 30px rgba(255,43,43,0.06);
+  animation:spin 1.4s linear infinite; 
+
+}
+
+
+.spinner:after
+{
+  content:""; position:absolute; inset:12px; border-radius:50%;
+ background:var(--card); box-shadow:inset 0 2px 10px rgba(0,0,0,0.7); 
+
+}
 @keyframes spin{100%{transform:rotate(360deg)}}
 
 /* floating neon 'PAYMENT' title - slightly above bottom */
-.payment-title{
+.payment-title
+{
   position:fixed; left:50%; transform:translateX(-50%); z-index:5;
   bottom:8vh; /* slightly above bottom */
   font-size:68px; font-weight:900; letter-spacing:10px; text-transform:uppercase;
@@ -156,6 +311,9 @@ input:focus{
   animation: floatY 4.6s ease-in-out infinite, neonShift 6s linear infinite;
   transform-origin:center;
 }
+
+
+
 @keyframes floatY {
   0% { transform: translateX(-50%) translateY(0) scale(1); }
   50% { transform: translateX(-50%) translateY(-10px) scale(1.02); }
@@ -177,23 +335,42 @@ input:focus{
         0 14px 30px rgba(0,0,0,0.6); color: var(--accent); }
 }
 
+
+
 /* small floating blur dots */
-.float-dot{position:absolute;width:120px;height:120px;border-radius:50%;filter:blur(30px);opacity:0.06;pointer-events:none}
-.f1{left:2%;top:6%;background:radial-gradient(circle,#ff2b2b, transparent 40%)}
+.float-dot{
+  position:absolute;width:120px;height:120px;border-radius:50%;filter:blur(30px);opacity:0.06;
+  pointer-events:none
+}
+
+
+.f1
+{left:2%;top:6%;
+  background:radial-gradient(circle,#ff2b2b, transparent 40%)
+}
 .f2{right:6%;bottom:10%;background:radial-gradient(circle,#ff6b6b, transparent 40%)}
 
+
+
+
 /* responsive */
-@media (max-width:900px){
+@media (max-width:900px)
+{
   .card{grid-template-columns:1fr;gap:18px;padding:18px}
   .logo{width:150px}
   .panel-left{padding:14px}
   .payment-title{font-size:46px;bottom:6vh}
 }
-@media (max-width:480px){
+
+
+@media (max-width:480px)
+{
   body{padding:12px}
   .pay-btn{width:100%}
   .payment-title{font-size:34px;bottom:5vh}
 }
+
+
 /* titre à l'intérieur de la card (plein largeur) */
 .card-title {
   grid-column: 1 / -1;            /* occupe les deux colonnes de la card */
